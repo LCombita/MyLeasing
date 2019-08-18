@@ -32,7 +32,8 @@ namespace MyLeasing.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            //injection database. "DefaultConnection" is name in "appsettinngs.json"
+            //"DataContext" here register of models
             services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
