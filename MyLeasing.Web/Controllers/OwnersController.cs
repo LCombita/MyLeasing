@@ -251,7 +251,7 @@ namespace MyLeasing.Web.Controllers
                 await _dataContext.SaveChangesAsync();
                 return RedirectToAction($"Details/{model.OwnerId}");
             }
-
+            model.PropertyTypes = _combosHelper.GetComboPropertyTypes(); //viene de CombosHelper y ICombosHelper
             return View(model);
         }
 
